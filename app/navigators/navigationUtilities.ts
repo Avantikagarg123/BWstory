@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react"
 import { BackHandler, Platform } from "react-native"
 import {
+  NavigationContainerRefWithCurrent,
   NavigationState,
   PartialState,
   createNavigationContainerRef,
@@ -24,7 +25,8 @@ type Storage = typeof storage
  * The types on this reference will only let you reference top level navigators. If you have
  * nested navigators, you'll need to use the `useNavigation` with the stack navigator's ParamList type.
  */
-export const navigationRef = createNavigationContainerRef<AppStackParamList>()
+
+export const navigationRef = createNavigationContainerRef<AppStackParamList>() as NavigationContainerRefWithCurrent<AppStackParamList>;
 
 /**
  * Gets the current screen from any navigation state.

@@ -99,6 +99,17 @@ export const iconRegistry = {
   settings: require("../../assets/icons/settings.png"),
   view: require("../../assets/icons/view.png"),
   x: require("../../assets/icons/x.png"),
+  search: require("../../assets/icons/Discover/search.png"),
+  compass: require("../../assets/icons/Discover/compass.png"),
+  comment: require("../../assets/icons/Discover/comment.png"),
+  like: require("../../assets/icons/Discover/like.png"),
+  share: require("../../assets/icons/Discover/share.png"),
+  user: require("../../assets/icons/Profile/user.png"),
+  user1: require("../../assets/icons/Profile/user1.png"),
+  send: require("../../assets/icons/Profile/send.png"),
+  bag: require("../../assets/icons/Profile/bag.png"),
+  line: require("../../assets/icons/Profile/line.png"),
+  
 }
 
 const $imageStyleBase: ImageStyle = {

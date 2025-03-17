@@ -8,6 +8,7 @@ import {
   DarkTheme,
   DefaultTheme,
   NavigationContainer,
+  NavigationContainerRef,
 } from "@react-navigation/native"
 import { createNativeStackNavigator, NativeStackScreenProps } from "@react-navigation/native-stack"
 import { observer } from "mobx-react-lite"
@@ -32,9 +33,10 @@ import { colors } from "app/theme"
  *   https://reactnavigation.org/docs/typescript/#organizing-types
  */
 export type AppStackParamList = {
-  Welcome: undefined
-  // 🔥 Your screens go here
-  // IGNITE_GENERATOR_ANCHOR_APP_STACK_PARAM_LIST
+  Home: undefined
+  Profile: undefined
+  Discover: undefined
+	// IGNITE_GENERATOR_ANCHOR_APP_STACK_PARAM_LIST
 }
 
 /**
@@ -53,12 +55,11 @@ const Stack = createNativeStackNavigator<AppStackParamList>()
 
 const AppStack = observer(function AppStack() {
   return (
-    <Stack.Navigator
-      screenOptions={{ headerShown: false, navigationBarColor: colors.background }}
-    >
-          <Stack.Screen name="Welcome" component={Screens.WelcomeScreen} />
-      {/** 🔥 Your screens go here */}
-      {/* IGNITE_GENERATOR_ANCHOR_APP_STACK_SCREENS */}
+    <Stack.Navigator screenOptions={{ headerShown: false, navigationBarColor: colors.background }}>
+      <Stack.Screen name="Home" component={Screens.HomeScreen} />
+      <Stack.Screen name="Profile" component={Screens.ProfileScreen} />
+      <Stack.Screen name="Discover" component={Screens.DiscoverScreen} />
+			{/* IGNITE_GENERATOR_ANCHOR_APP_STACK_SCREENS */}
     </Stack.Navigator>
   )
 })
@@ -73,7 +74,7 @@ export const AppNavigator = observer(function AppNavigator(props: NavigationProp
 
   return (
     <NavigationContainer
-      ref={navigationRef}
+      ref={navigationRef as unknown as React.RefObject<NavigationContainerRef<{}>>}
       theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
       {...props}
     >

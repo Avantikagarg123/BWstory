@@ -106,6 +106,7 @@ function App(props: AppProps) {
             initialState={initialNavigationState}
             onStateChange={onNavigationStateChange}
           />
+          
         </GestureHandlerRootView>
       </ErrorBoundary>
     </SafeAreaProvider>
